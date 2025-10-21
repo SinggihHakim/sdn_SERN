@@ -21,22 +21,29 @@ const ManajemenGaleri = () => {
   const [submittingEdit, setSubmittingEdit] = useState(false);
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const token = localStorage.getItem("adminToken");
-        const response = await axios.get("http://localhost:5001/api/admin/galeri", {
-          headers: { Authorization: `Bearer ${token}` },
-          params: { _: new Date().getTime() },
-        });
-        setImages(response.data);
-      } catch (err) {
-        setError("Gagal memuat data galeri.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchImages();
-  }, []);
+  const fetchImages = async () => {
+    try {
+      const token = localStorage.getItem("adminToken");
+      
+      // Definisikan API URL dari environment variable.
+      // Saat development, ini akan menjadi 'http://localhost:5001'.
+      // Saat di Vercel, ini akan menjadi URL Vercel Anda.
+      const apiUrl = import.meta.env.VITE_API_URL || '';
+
+      const response = await axios.get(`${apiUrl}/api/admin/galeri`, {
+        headers: { Authorization: `Bearer ${token}` },
+        params: { _: new Date().getTime() },
+      });
+      
+      setImages(response.data);
+    } catch (err) {
+      setError("Gagal memuat data galeri.");
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchImages();
+}, []);
 
   const handleUpload = async (e) => {
     e.preventDefault();
