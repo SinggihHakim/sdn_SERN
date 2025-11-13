@@ -36,4 +36,3 @@ app.listen(port, () => {
   console.log(`Server backend berjalan di http://localhost:${port}`);
 });
 
-export default app;
