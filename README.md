@@ -194,5 +194,4 @@ Dibuat dengan ❤️ untuk kemajuan pendidikan SDN 01 Pematang Baru.
 
 </div>
 
-```
 
