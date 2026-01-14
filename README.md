@@ -1,89 +1,188 @@
-# Website Sekolah Dasar Negeri 01 Pematang Baru
 
-## Deskripsi 📖
+<div align="center">
 
-Proyek ini adalah website full-stack modern untuk SDN 01 Pematang Baru. Tujuannya adalah untuk menyediakan pusat informasi yang mudah diakses bagi siswa, orang tua, dan masyarakat umum, serta mempermudah proses pendaftaran siswa baru dan pengumpulan kritik/saran. Website ini dilengkapi dengan panel admin untuk pengelolaan konten yang dinamis.
+# 🏫 Website SDN 01 Pematang Baru
 
----
+**Platform Informasi Digital Terintegrasi & Manajemen Sekolah**
 
-## Fitur Utama ✨
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 
-### Halaman Publik:
-* **Beranda:** Tampilan utama dengan *hero section*, sambutan kepala sekolah, visi & misi, pratinjau berita terbaru, dan slider galeri kegiatan.
-* **Galeri:** Menampilkan semua foto kegiatan sekolah dalam layout *masonry* yang menarik. Gambar dapat diperbesar saat diklik.
-* **Berita:** Menampilkan daftar semua postingan berita atau informasi dalam bentuk kartu. Detail berita dapat dilihat dalam modal/pop-up.
-* **Guru & Staff:** Menampilkan profil kepala sekolah secara menonjol, diikuti oleh daftar guru dan staff lainnya.
-* **E-Book:** Fitur pencarian buku digital menggunakan Google Books API.
-* **Kontak:** Berisi informasi kontak sekolah, peta lokasi (iframe), bagian FAQ (Frequently Asked Questions), dan formulir "Kritik dan Saran".
-* **Pendaftaran:** Formulir online untuk pendaftaran siswa baru.
+[Demo (Coming Soon)] • [Laporkan Bug] • [Request Fitur]
 
-### Panel Admin:
-* **Login Aman:** Halaman login khusus untuk admin.
-* **Dashboard:** Tampilan ringkasan setelah login.
-* **Manajemen Pendaftar:** Menampilkan data semua calon siswa yang mendaftar melalui formulir publik, dengan detail yang bisa dilihat dalam modal. Admin dapat menghapus data pendaftar.
-* **Manajemen Galeri:** Antarmuka untuk mengunggah gambar baru (dengan caption opsional) dan menghapus gambar dari galeri publik.
-* **Manajemen Berita:** Antarmuka CRUD (Create, Read, Update, Delete) penuh untuk mengelola postingan berita, termasuk unggah gambar unggulan.
-* **Manajemen Guru:** Antarmuka CRUD penuh untuk mengelola data guru dan staff, termasuk foto dan penetapan kepala sekolah.
-* **Lihat Saran:** Menampilkan semua pesan kritik dan saran yang masuk dari formulir kontak. Admin dapat menghapus saran.
+</div>
 
 ---
 
-## Teknologi yang Digunakan 🛠️
+## 📖 Tentang Proyek
 
-* **Database:** Supabase (PostgreSQL + Storage)
-* **Backend:** Node.js, Express.js
-* **Frontend:** React.js (dibuat dengan Vite)
-* **Styling:** Tailwind CSS
-* **Komponen UI:** ShadCN UI
-* **HTTP Client:** Axios
-* **File Upload Handling (Backend):** Multer
+**Website SDN 01 Pematang Baru** adalah solusi *full-stack* modern yang dirancang untuk menjembatani komunikasi antara sekolah, wali murid, dan masyarakat. Website ini tidak hanya berfungsi sebagai papan informasi digital, tetapi juga memfasilitasi proses pendaftaran siswa baru secara online dan menampung aspirasi masyarakat.
+
+Dilengkapi dengan **Panel Admin** yang intuitif, pengelolaan konten sekolah menjadi lebih mudah, cepat, dan aman tanpa memerlukan keahlian koding.
 
 ---
 
-## Cara Menjalankan Proyek Secara Lokal 🚀
+## ✨ Fitur Unggulan
 
-**Prasyarat:**
-* Node.js (v18 atau lebih baru) & npm
-* Akun Supabase
+### 🌍 Halaman Publik (Frontend)
+Halaman yang dapat diakses oleh siapa saja dengan antarmuka yang responsif.
 
-**Langkah-langkah:**
+| Fitur | Deskripsi |
+| :--- | :--- |
+| 🏠 **Beranda Interaktif** | Hero section, sambutan kepala sekolah, visi-misi, dan highlight berita terbaru. |
+| 🖼️ **Galeri Masonry** | Tampilan foto kegiatan sekolah yang estetis dengan fitur *lightbox* (zoom). |
+| 📰 **Portal Berita** | Daftar pengumuman dan artikel sekolah dengan detail *pop-up* yang cepat. |
+| 👥 **Direktori Staff** | Profil lengkap Kepala Sekolah, Guru, dan Staff Tata Usaha. |
+| 📚 **E-Library** | Pencarian buku digital terintegrasi langsung dengan **Google Books API**. |
+| 📝 **PPDB Online** | Formulir pendaftaran siswa baru yang mudah digunakan. |
+| 🗺️ **Pusat Kontak** | Integrasi Google Maps, FAQ, dan formulir "Kritik & Saran". |
 
-1.  **Clone Repository:**
-    ```bash
-    git clone [URL_REPOSITORY_ANDA]
-    cd [NAMA_FOLDER_PROYEK]
-    ```
-2.  **Setup Supabase:**
-    * Buat proyek baru di Supabase.
-    * Jalankan skrip SQL (yang telah disediakan sebelumnya) di **SQL Editor** untuk membuat tabel (`guru`, `postingan`, `galeri`, `pendaftaran`, `saran`).
-    * Buat **Storage Bucket** publik bernama `school-assets`.
-    * Atur **Policies** untuk Storage Bucket agar mengizinkan SELECT publik (`anon`) serta INSERT dan DELETE untuk pengguna terotentikasi (`authenticated`).
-    * Salin **Project URL**, **anon key**, dan **service_role key** dari **Project Settings > API**.
-3.  **Konfigurasi Backend:**
-    * Masuk ke folder `backend`.
-    * Buat file `.env` dan isi sesuai contoh, gunakan **service_role key** untuk `SUPABASE_KEY`.
-    ```.env
-    SUPABASE_URL=URL_PROYEK_SUPABASE_ANDA
-    SUPABASE_KEY=SERVICE_ROLE_KEY_ANDA
-    PORT=5001
-    ADMIN_USERNAME=admin
-    ADMIN_PASSWORD=admin123
-    ```
-    * Jalankan `npm install`.
-4.  **Konfigurasi Frontend:**
-    * Masuk ke folder `frontend`.
-    * Buat file `.env` (jika diperlukan, meskipun saat ini tidak ada variabel khusus frontend).
-    * Jalankan `npm install`.
-5.  **Jalankan Server:**
-    * Di terminal pertama (dalam folder `backend`), jalankan `npm run dev`.
-    * Di terminal kedua (dalam folder `frontend`), jalankan `npm run dev`.
-6.  **Akses Aplikasi:** Buka `http://localhost:5173` di browser Anda.
+### 🛡️ Panel Admin (Dashboard)
+Area terbatas untuk pengelolaan data sekolah.
+
+* 🔐 **Otentikasi Aman:** Login khusus administrator.
+* 📊 **Dashboard Ringkasan:** Statistik cepat data sekolah.
+* 📝 **Manajemen Pendaftar:** Lihat, kelola, dan hapus data calon siswa baru.
+* 📸 **Manajemen Galeri:** Upload foto kegiatan dan atur caption dengan mudah.
+* 📰 **CMS Berita:** Buat, edit, dan hapus berita (mendukung upload gambar).
+* 👨‍🏫 **Manajemen Guru:** Tambah dan update data pengajar serta struktur organisasi.
+* 📩 **Kotak Saran:** Pantau masukan dari masyarakat.
 
 ---
 
+## 📸 Tangkapan Layar (Screenshots)
 
-Akses halaman `/login` untuk masuk ke panel admin.
+<div align="center">
+  <img src="https://placehold.co/600x400?text=Tampilan+Beranda" alt="Halaman Beranda" width="45%">
+  <img src="https://placehold.co/600x400?text=Dashboard+Admin" alt="Dashboard Admin" width="45%">
+</div>
 
 ---
 
-Selamat menjelajahi dan mengembangkan proyek ini! 🎉
+## 🛠️ Teknologi (Tech Stack)
+
+Proyek ini dibangun menggunakan arsitektur **Monorepo** (Frontend & Backend terpisah folder):
+
+* **Frontend:** React.js (Vite), Tailwind CSS, ShadCN UI, Axios.
+* **Backend:** Node.js, Express.js, Multer (File Handling).
+* **Database & Storage:** Supabase (PostgreSQL).
+
+---
+
+## 📂 Struktur Folder
+
+```text
+sdn-01-pematang-baru/
+├── backend/            # Server-side logic (Express)
+│   ├── index.js        # Entry point
+│   ├── .env            # Config backend (Supabase keys)
+│   └── ...
+├── frontend/           # Client-side UI (React + Vite)
+│   ├── src/
+│   ├── .env            # Config frontend
+│   └── ...
+└── README.md           # Dokumentasi ini
+
+```
+
+---
+
+## 🚀 Cara Menjalankan (Local Development)
+
+Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer Anda.
+
+### 1. Prasyarat
+
+Pastikan Anda telah menginstal:
+
+* [Node.js](https://nodejs.org/) (v18+)
+* Git
+
+### 2. Persiapan Database (Supabase)
+
+1. Buat proyek baru di [Supabase Dashboard](https://supabase.com/).
+2. Buka **SQL Editor** dan jalankan query pembuatan tabel (`guru`, `postingan`, `galeri`, `pendaftaran`, `saran`).
+3. Buat **Storage Bucket** baru bernama `school-assets` (Public).
+4. Atur **Policies** bucket: `SELECT` untuk public, `INSERT/DELETE` untuk authenticated.
+5. Salin **URL**, **Anon Key**, dan **Service Role Key** dari menu *Project Settings > API*.
+
+### 3. Instalasi & Konfigurasi
+
+#### A. Setup Backend
+
+```bash
+cd backend
+npm install
+
+```
+
+Buat file `.env` di dalam folder `backend` dan isi:
+
+```env
+SUPABASE_URL=[https://project-id.supabase.co](https://project-id.supabase.co)
+SUPABASE_KEY=service-role-key-anda
+PORT=5001
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin123
+
+```
+
+#### B. Setup Frontend
+
+```bash
+cd ../frontend
+npm install
+
+```
+
+### 4. Menjalankan Server
+
+Buka dua terminal terpisah:
+
+**Terminal 1 (Backend):**
+
+```bash
+cd backend
+npm run dev
+
+```
+
+**Terminal 2 (Frontend):**
+
+```bash
+cd frontend
+npm run dev
+
+```
+
+Buka browser dan akses: `http://localhost:5173`
+
+> **Catatan Login Admin:**
+> Gunakan kredensial default yang Anda atur di `.env` backend (Contoh: `admin` / `admin123`) di halaman `/login`.
+
+---
+
+## 🤝 Kontribusi
+
+Kontribusi selalu diterima! Silakan buat *Pull Request* atau buka *Issue* jika menemukan bug.
+
+1. Fork repositori ini.
+2. Buat branch fitur baru (`git checkout -b fitur-keren`).
+3. Commit perubahan Anda (`git commit -m 'Menambahkan fitur keren'`).
+4. Push ke branch (`git push origin fitur-keren`).
+5. Buat Pull Request.
+
+---
+
+<div align="center">
+
+Dibuat dengan ❤️ untuk kemajuan pendidikan SDN 01 Pematang Baru.
+
+</div>
+
+```
+
