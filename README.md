@@ -57,8 +57,18 @@ Area terbatas untuk pengelolaan data sekolah.
 ## 📸 Tangkapan Layar (Screenshots)
 
 <div align="center">
-  <img src="https://placehold.co/600x400?text=Tampilan+Beranda" alt="Halaman Beranda" width="45%">
-  <img src="https://placehold.co/600x400?text=Dashboard+Admin" alt="Dashboard Admin" width="45%">
+  <img width="2471" height="1402" alt="image" src="https://github.com/user-attachments/assets/53f3da24-87af-476c-8f06-a977c99772af" />
+  <img width="2473" height="1406" alt="image" src="https://github.com/user-attachments/assets/9540f482-ecb6-4939-b46c-9bd18869450a" />
+  <img width="2464" height="1401" alt="image" src="https://github.com/user-attachments/assets/4918f709-b98d-4d5c-bb62-4d46554cdaa5" />
+  <img width="2493" height="1406" alt="image" src="https://github.com/user-attachments/assets/c30aee0c-f825-4dcb-a192-236a7c0e4b5f" />
+  <img width="2467" height="1402" alt="image" src="https://github.com/user-attachments/assets/9233c61f-761c-485e-bcbe-826e8f2c6222" />
+  <img width="2474" height="1402" alt="image" src="https://github.com/user-attachments/assets/c8e5f434-ab45-4242-860e-24425601593d" />
+  <img width="2470" height="1396" alt="image" src="https://github.com/user-attachments/assets/2b20be95-b5fa-46ef-9360-f9ca073d2232" />
+
+
+
+
+
 </div>
 
 ---
